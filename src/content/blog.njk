@@ -1,6 +1,33 @@
-<h1 class="p-4 mb-1 text-xs font-medium tracking-widest text-white uppercase bg-slate-600">
-    Blog Archive
-</h1>
-
-{% set postslist = collections.posts %}
-{% include "postslist.njk" %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{{ title }}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    body {
+      font-family: sans-serif;
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 1rem;
+      line-height: 1.6;
+    }
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+    .date {
+      color: #888;
+      font-size: 0.9rem;
+      margin-bottom: 2rem;
+    }
+  </style>
+</head>
+<body>
+  <h1>{{ title }}</h1>
+  <div class="date">{{ date }}</div>
+  <article>
+    {{ content | safe }}
+  </article>
+</body>
+</html>
